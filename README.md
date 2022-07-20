@@ -71,5 +71,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 :heavy_check_mark: MySQL  
 :heavy_check_mark: Javascript   
 :heavy_check_mark: Bulma (Framework CSS)  
+:heavy_check_mark: Padrão REST 
   
 Made with :purple_heart: Rafael Rani :wave: [Get in touch!](https://www.linkedin.com/in/rafaelrani/)
