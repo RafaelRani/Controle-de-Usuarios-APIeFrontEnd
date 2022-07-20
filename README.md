@@ -57,6 +57,10 @@ $ npm i
 $ npm run serve
 
 # O servidor iniciará na porta:8080 - acesse: <http://localhost:8080>
+
+# testar a aplicação com usuário Administrador:  
+email: adm@gmail.com  
+senha: adm
 ```
 
 ## :rocket: Tecnologias
