@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const PasswordToken = require('../models/PasswordToken');
 
-const secret = 'adsuasgdhjasgdhjdgahjsg12hj3eg12hj3g12hj3g12hj3g123';
+const JWTsecret = 'adsuasgdhjasgdhjdgahjsg12hj3eg12hj3g12hj3g12hj3g123';
 
 class UserController {
   async index(req, res) {
@@ -112,10 +112,19 @@ class UserController {
       const resultado = await bcrypt.compare(password, user.password);
 
       if (resultado) {
-        const token = jwt.sign({ email: user.email, role: user.role }, secret);
+        const loggedUser = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+        };
+        const token = jwt.sign({
+          email: user.email,
+          role: user.role,
+        }, JWTsecret, { expiresIn: '1h' });
 
         res.status(200);
-        res.json({ token });
+        res.json({ token, loggedUser });
       } else {
         res.status(406);
         res.json({ err: 'Senha incorreta' });
