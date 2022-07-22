@@ -41,7 +41,7 @@ $ cd Controle-de-Usuarios-APIeFrontEnd/UserAPI
 $ npm i
 
 # Execute a aplicação em modo de desenvolvimento
-$ nodemon index.js
+$ node index.js
 ```
 
 ### Rodando o FrontEnd
