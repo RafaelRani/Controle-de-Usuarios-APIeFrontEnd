@@ -8,7 +8,7 @@ Aplicação de controle de usuários (API em Node.js + FrontEnd em Vue.js)
 - [X] Editar usuário
 - [X] Deletar usuário
 - [X] Fazer Login
-- [ ] Fazer Logout (Em construção...)
+- [X] Fazer Logout
 - [ ] Recuperar senha do usuário (Em construção...)
 
 
