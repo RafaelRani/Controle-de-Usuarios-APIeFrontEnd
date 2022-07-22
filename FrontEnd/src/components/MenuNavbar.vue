@@ -29,7 +29,7 @@
 
       <div class="navbar-end">
 
-        <div v-if="name != undefined">
+        <div v-if="name != ''">
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> {{name}} </a>
 
@@ -38,7 +38,7 @@
                 <a class="navbar-item"> Editar </a>
               </router-link>
               <hr class="navbar-divider" />
-              <a class="navbar-item"> Logout </a>
+              <a class="navbar-item" @click="logout" href="/"> Logout </a>
             </div>
           </div>
         </div>
@@ -69,6 +69,13 @@ export default {
       name: String,
       id: Number,
     };
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      localStorage.setItem('name', '');
+      this.$router.push({ name: 'Home' });
+    },
   },
 };
 </script>
