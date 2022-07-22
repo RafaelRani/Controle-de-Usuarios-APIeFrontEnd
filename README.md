@@ -11,6 +11,12 @@ Aplicação de controle de usuários (API em Node.js + FrontEnd em Vue.js)
 - [X] Fazer Logout
 - [ ] Recuperar senha do usuário (Em construção...)
 
+## :camera: Demonstração
+
+<div align="center" >
+  <img src="./Github/demonstracao.gif" alt="demonstracao">
+</div>
+
 ## :clipboard: Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
