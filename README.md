@@ -8,9 +8,8 @@ Aplicação de controle de usuários (API em Node.js + FrontEnd em Vue.js)
 - [X] Editar usuário
 - [X] Deletar usuário
 - [X] Fazer Login
-- [ ] Fazer Logout (Em construção...)
+- [X] Fazer Logout
 - [ ] Recuperar senha do usuário (Em construção...)
-
 
 ## :clipboard: Pré-requisitos
 
@@ -69,8 +68,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 :heavy_check_mark: Node.js  
 :heavy_check_mark: Vue.js  
 :heavy_check_mark: MySQL  
-:heavy_check_mark: Javascript   
+:heavy_check_mark: Javascript
 :heavy_check_mark: Bulma (Framework CSS)  
-:heavy_check_mark: Padrão REST 
+:heavy_check_mark: Padrão REST
   
 Made with :purple_heart: Rafael Rani :wave: [Get in touch!](https://www.linkedin.com/in/rafaelrani/)
