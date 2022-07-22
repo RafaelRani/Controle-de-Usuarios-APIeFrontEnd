@@ -70,6 +70,10 @@ export default {
         .then((res) => {
           console.log(res);
           localStorage.setItem('token', res.data.token);
+          localStorage.setItem('id', res.data.loggedUser.id);
+          localStorage.setItem('name', res.data.loggedUser.name);
+          localStorage.setItem('email', res.data.loggedUser.email);
+          localStorage.setItem('role', res.data.loggedUser.role);
           this.$router.push({ name: 'Home' });
         })
         .catch((err) => {

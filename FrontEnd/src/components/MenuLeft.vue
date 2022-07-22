@@ -10,10 +10,10 @@
           <li><a href="/admin/users">Editar Usuário</a></li>
           <li><a href="/admin/users">Remover Usuário</a></li>
         </ul>
-        <p class="menu-label">Transactions</p>
+        <p class="menu-label">Sobre</p>
         <ul class="menu-list">
-          <li><a>Payments</a></li>
-          <li><a>Transfers</a></li>
+          <li><a href="/about">Descrição</a></li>
+          <li><a href="https://github.com/RafaelRani/Controle-de-Usuarios-APIeFrontEnd">Github</a></li>
         </ul>
       </aside>
     </div>

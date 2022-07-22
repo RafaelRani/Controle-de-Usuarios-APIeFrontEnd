@@ -22,22 +22,27 @@
       <div class="navbar-start">
         <a class="navbar-item" href="/"> Home </a>
 
-        <a class="navbar-item" href="https://github.com/rafarani">
+        <a class="navbar-item" href="https://github.com/RafaelRani/Controle-de-Usuarios-APIeFrontEnd">
           Documentation
         </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> More </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="/about"> About </a>
-            <hr class="navbar-divider" />
-            <a class="navbar-item"> Report an issue </a>
-          </div>
-        </div>
       </div>
 
       <div class="navbar-end">
+
+        <div v-if="name != undefined">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> {{name}} </a>
+
+            <div class="navbar-dropdown">
+              <router-link :to="{ name: 'UserEdit', params: { id } }">
+                <a class="navbar-item"> Editar </a>
+              </router-link>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Logout </a>
+            </div>
+          </div>
+        </div>
+
         <div class="navbar-item">
           <div class="buttons">
             <a class="button is-primary" href="/register">
@@ -52,7 +57,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    const fullname = localStorage.getItem('name');
+    const names = fullname.split(' ');
+    [this.name] = [names[0]];
+    this.id = localStorage.getItem('id');
+  },
+  data() {
+    return {
+      name: String,
+      id: Number,
+    };
+  },
+};
 </script>
 
 <style></style>

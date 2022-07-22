@@ -26,17 +26,11 @@
                   <td>{{ user.email }}</td>
                   <td>{{ user.role | processRole }}</td>
                   <td>
-                    <router-link
-                      :to="{ name: 'UserEdit', params: { id: user.id } }"
-                      ><button class="button is-success">
-                        Editar
-                      </button></router-link
-                    >
+                    <router-link :to="{ name: 'UserEdit', params: { id: user.id } }">
+                      <button class="button is-success"> Editar </button>
+                    </router-link>
                     |
-                    <button
-                      class="button is-danger"
-                      @click="showModalUser(user.id, user.name)"
-                    >
+                    <button class="button is-danger" @click="showModalUser(user.id, user.name)">
                       Deletar
                     </button>
                   </td>

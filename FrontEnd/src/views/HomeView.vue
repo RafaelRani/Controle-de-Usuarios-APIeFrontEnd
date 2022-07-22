@@ -49,8 +49,7 @@ export default {
       },
     };
 
-    axios
-      .get('http://localhost:8686/user', req)
+    axios.get('http://localhost:8686/user', req)
       .then((res) => {
         console.log(res);
         this.users = res.data;
