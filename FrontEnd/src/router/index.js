@@ -6,6 +6,8 @@ import RegisterView from '../views/RegisterView.vue';
 import LoginView from '../views/LoginView.vue';
 import UsersView from '../views/UsersView.vue';
 import EditView from '../views/EditView.vue';
+import RecoverPasswordView from '../views/RecoverPasswordView.vue';
+import ChangePasswordView from '../views/ChangePasswordView.vue';
 
 function AdminAuth(to, from, next) {
   if (localStorage.getItem('token') !== undefined) {
@@ -61,6 +63,16 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('../views/AboutView.vue'),
+  },
+  {
+    path: '/recoverpassword',
+    name: 'RecoverPassword',
+    component: RecoverPasswordView,
+  },
+  {
+    path: '/changepassword',
+    name: 'ChangePassword',
+    component: ChangePasswordView,
   },
 ];
 

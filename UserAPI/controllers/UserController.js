@@ -82,10 +82,10 @@ class UserController {
     const result = await PasswordToken.create(email);
     if (result.status) {
       res.status(200);
-      res.send(`${result.token}`);
+      res.json(result);
     } else {
       res.status(406);
-      res.send(result.err);
+      res.json(result);
     }
   }
 
@@ -96,10 +96,10 @@ class UserController {
     if (isTokenValid.status) {
       await User.changePassword(password, isTokenValid.token.user_id, isTokenValid.token.token);
       res.status(200);
-      res.send('Senha alterada');
+      res.json('Senha alterada com sucesso');
     } else {
       res.status(406);
-      res.send('Token inválido!');
+      res.json('Token inválido!');
     }
   }
 

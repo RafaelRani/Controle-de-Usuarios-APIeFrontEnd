@@ -9,7 +9,7 @@ Aplicação de controle de usuários (API em Node.js + FrontEnd em Vue.js)
 - [X] Deletar usuário
 - [X] Fazer Login
 - [X] Fazer Logout
-- [ ] Recuperar senha do usuário (Em construção...)
+- [X] Recuperar senha do usuário
 
 ## :clipboard: Pré-requisitos
 

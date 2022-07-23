@@ -1,32 +1,20 @@
 <template>
-  <div class="login">
+  <div class="changePassword">
     <MenuNavbar />
     <br />
     <section class="container">
       <div class="columns is-centered">
         <div class="column is-6">
           <div class="box">
-            <h1 class="title">Login de Usuário</h1>
-            <h2 class="subtitle">Seja bem vindo</h2>
+            <h1 class="title">Altere sua senha</h1>
+            <h6 class="subtitle is-6">Digite sua nova senha.</h6>
             <div v-if="error != undefined">
               <div class="notification is-danger">
                 {{ error }}
               </div>
             </div>
             <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input
-                  class="input"
-                  type="email"
-                  placeholder="email@example.com"
-                  v-model="email"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Senha</label>
+              <label class="label">Nova Senha</label>
               <div class="control">
                 <input
                   class="input"
@@ -35,10 +23,20 @@
                   v-model="password"
                 />
               </div>
-              <a href="/recoverpassword">Esqueci minha senha</a>
+            </div>
+            <div class="field">
+              <label class="label">Repita</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="********"
+                  v-model="password2"
+                />
+              </div>
             </div>
 
-            <button class="button is-primary" @click="login">Login</button>
+            <button class="button is-primary" @click="change">Redefinir Senha</button>
           </div>
         </div>
       </div>
@@ -57,30 +55,30 @@ export default {
   data() {
     return {
       password: '',
-      email: '',
+      password2: '',
       error: undefined,
     };
   },
   methods: {
-    login() {
-      axios
-        .post('http://localhost:8686/login', {
+    change() {
+      if (this.password === this.password2) {
+        const token = localStorage.getItem('recoverToken');
+
+        axios.post('http://localhost:8686/changepassword', {
+          token,
           password: this.password,
-          email: this.email,
         })
-        .then((res) => {
-          console.log(res);
-          localStorage.setItem('token', res.data.token);
-          localStorage.setItem('id', res.data.loggedUser.id);
-          localStorage.setItem('name', res.data.loggedUser.name);
-          localStorage.setItem('email', res.data.loggedUser.email);
-          localStorage.setItem('role', res.data.loggedUser.role);
-          this.$router.push({ name: 'Home' });
-        })
-        .catch((err) => {
-          const msgErro = err.response.data.err;
-          this.error = msgErro;
-        });
+          .then((res) => {
+            alert(res.data);
+            localStorage.removeItem('recoverToken');
+            this.$router.push({ name: 'Login' });
+          })
+          .catch((err) => {
+            alert(err.data);
+          });
+      } else {
+        this.error = 'As senhas não correspondem';
+      }
     },
   },
   components: {
